@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "edf30c40-1250-42d5-9630-a56a13e800a5",
+		"name": "Android Assigment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10165936"
+	},
+	"item": [
+		{
+			"name": "All Images Labels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://veritask.vercel.app/api/images",
+					"protocol": "https",
+					"host": [
+						"veritask",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"images"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Image Data Validation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"imageLabel\":\"landscape\",\"image\":\"VGhpcyBpcyBhIHRlc3Q=\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://veritask.vercel.app/api/images",
+					"protocol": "https",
+					"host": [
+						"veritask",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"images"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
