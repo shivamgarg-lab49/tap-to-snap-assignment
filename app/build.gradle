@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+def libraries = rootProject.ext.libraries
+
+android {
+    compileSdk 31
+
+    signingConfigs {
+        release {
+            storeFile file("../tap_to_snap_key")
+            storePassword "1abc@def"
+            keyAlias "key0"
+            keyPassword "1abc@def"
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.lab49.assignment.taptosnap"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+        resConfigs "en"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro', 'retrofit.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation libraries.coreKtx
+    implementation libraries.appCompat
+    implementation libraries.navKtx
+    implementation libraries.retrofit
+    implementation libraries.gsonConvertor
+    implementation libraries.interceptor
+    implementation libraries.constraintlayout
+    implementation libraries.lifecycleRuntime
+    implementation libraries.material
+    implementation libraries.hilt
+    kapt libraries.hiltKapt
+
+    testImplementation libraries.junit4
+    testImplementation libraries.turbine
+    testImplementation libraries.coroutineTest
+    testImplementation libraries.mockito
+}
