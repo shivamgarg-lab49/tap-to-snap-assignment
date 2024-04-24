@@ -47,11 +47,11 @@ Your task is to create an Android application with the following features, incor
       - Display an alert dialog saying "You\'ve run out of time, Better luck next time!" with two options: "Exit" to close the app and "Restart" to restart the application and reset all previous state.
 
 3. **Additional Requirements:**
+   - Adhere to the single activity architecture with jetpack navigation.
    - Adhere to the Model-View-ViewModel (MVVM) architectural pattern for separating concerns and promoting maintainability.
-   - Ensure the application is responsive and works across different screen sizes and orientations.
-   - Use modern Android design guidelines and material components for designing the user interface.
+   - Adhere to the android view system (Not compose).
   
-4. **Testing:**
+5. **Testing:**
    - Good to have test case for view models 
    - Test ViewModel classes using JUnit and Mockito to ensure proper behavior.
 
